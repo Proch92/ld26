@@ -529,10 +529,8 @@ bool Game::game_loop() {
 
 			track_speed += 0.001;
 
-			if(transparency >= 1) {
-				background.Stop();
+			if(transparency >= 1)
 				running = false;
-			}
 		}
 
 		update_screen();
@@ -554,8 +552,10 @@ bool Game::game_loop() {
 		if(rotation < 0)
 			rotation = 360 - rotation;
 
-		if(!gameover && (points <= MAXMISSES || points >= -MAXMISSES))
+		if(!gameover && (points <= MAXMISSES || points >= -MAXMISSES)) {
+			background.Stop();
 			gameover = true;
+		}
 	}
 
 	glPopMatrix();

@@ -6,4 +6,5 @@ exe: src/main.cpp src/Game.cpp src/utils.cpp
 clear:
 	rm *.o
 	rm debug.txt
+	rm ld26
 	
